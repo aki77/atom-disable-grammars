@@ -1,0 +1,17 @@
+{
+  "name": "disable-grammars",
+  "main": "./lib/main",
+  "version": "0.0.0",
+  "description": "Disables grammars",
+  "keywords": [
+    "grammar"
+  ],
+  "repository": "https://github.com/aki77/atom-disable-grammars",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {
+    "underscore-plus": "^1.6.0"
+  }
+}
