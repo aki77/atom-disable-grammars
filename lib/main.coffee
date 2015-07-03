@@ -55,6 +55,15 @@ module.exports = AtomDisableGrammars =
       for grammar in pack.grammars
         atom.grammars.removeGrammar(grammar)
 
+        sameScopeGrammar = _.find(atom.grammars.getGrammars(), ({scopeName}) ->
+          scopeName is grammar.scopeName
+        )
+
+        # reset grammarsByScopeName
+        if sameScopeGrammar
+          atom.grammars.removeGrammar(sameScopeGrammar)
+          atom.grammars.addGrammar(sameScopeGrammar)
+
     for binding in _.difference(oldGrammars, atom.grammars.getGrammars())
       console.log 'disable grammar', grammar if @debug
       @removedGrammars.add(grammar)
